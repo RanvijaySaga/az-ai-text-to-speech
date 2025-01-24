@@ -15,7 +15,7 @@ or create a custom neural voice that's unique to your product or brand.
 ## Set environment variables
 >set your SPEECH_KEY in [application.yml](src/main/resources/application.yml)
 <br>
-<br>set you SPEECH_REGION in [application.yml](src/main/resources/application.yml)
+>set you SPEECH_REGION in [application.yml](src/main/resources/application.yml)
 
 ## Install 
 * Clone the repository and import with IDE
