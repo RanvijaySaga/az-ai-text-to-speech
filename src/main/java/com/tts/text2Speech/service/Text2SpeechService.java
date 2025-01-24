@@ -5,6 +5,7 @@ import com.tts.text2Speech.dto.SpeechSynthesisResponse;
 import com.tts.text2Speech.dto.Text2SpeechRequest;
 import com.tts.text2Speech.enums.ErrorCode;
 import com.tts.text2Speech.exception.Text2SpeechException;
+import com.tts.text2Speech.exception.handler.SpeechSynthesisCanceled;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,7 @@ public class Text2SpeechService {
     public SpeechSynthesisResponse convertTextToSpeech(Text2SpeechRequest request) {
         SpeechSynthesisResponse response = new SpeechSynthesisResponse();
         try {
+
             SpeechSynthesisResult speechSynthesisResult = speechSynthesizer.SpeakTextAsync(request.getInputText()).get();
 
             switch (speechSynthesisResult.getReason()) {
@@ -30,8 +32,7 @@ public class Text2SpeechService {
                     break;
 
                 case Canceled:
-                    log.error(this.getCancellationDetails(speechSynthesisResult));
-                    throw new Text2SpeechException(ErrorCode.ERROR_SPEECH_SYNTHESIS_CANCELED);
+                    throw new Text2SpeechException(ErrorCode.ERROR_SPEECH_SYNTHESIS_CANCELED, new SpeechSynthesisCanceled(this.getCancellationDetails(speechSynthesisResult)));
             }
         } catch (InterruptedException exception) {
             throw new Text2SpeechException(ErrorCode.ERROR_INTERRUPTED_EXCEPTION, exception);
