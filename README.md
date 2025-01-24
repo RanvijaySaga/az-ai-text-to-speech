@@ -13,8 +13,7 @@ or create a custom neural voice that's unique to your product or brand.
 # Getting Started
 
 ## Set environment variables
->set your SPEECH_KEY in [application.yml](src/main/resources/application.yml)
-<br>
+>set your SPEECH_KEY in [application.yml](src/main/resources/application.yml)<br>
 >set you SPEECH_REGION in [application.yml](src/main/resources/application.yml)
 
 ## Install 
