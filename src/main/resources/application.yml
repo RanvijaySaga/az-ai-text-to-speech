@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: text2Speech
+
+text2Speech:
+  key: SPEECH_KEY
+  region: SPEECH_REGION
