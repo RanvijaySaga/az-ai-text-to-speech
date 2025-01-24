@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "8c7a1d79-8d14-486c-b4e9-b575884b7b7c",
+		"name": "azure-ai-speech-synthesis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SpeechSynthesis-text-2-speech",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"inputText\" : \"text to speech\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/text2speech/v1/convert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"text2speech",
+						"v1",
+						"convert"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
