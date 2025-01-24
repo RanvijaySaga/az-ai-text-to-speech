@@ -21,6 +21,10 @@ public class SpeechSynthesisConfig {
     @Bean
     public SpeechSynthesizer speechSynthesizer() {
         try (SpeechConfig speechConfig = SpeechConfig.fromSubscription(speechKey, speechRegion)) {
+            /*
+             * To change the speech synthesis language, replace en-US-AvaMultilingualNeural with another
+             * supported voice : <a href="https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=stt#prebuilt-neural-voices">...</a>
+             */
             speechConfig.setSpeechSynthesisVoiceName(SpeechSynthesisConstants.SPEECH_SYNTHESIS_VOICE_NAME);
 
             return new SpeechSynthesizer(speechConfig);
