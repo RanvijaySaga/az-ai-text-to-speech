@@ -12,7 +12,7 @@ public enum ErrorCode {
     ERROR_SPEECH_SYNTHESIS_CONFIG(HttpStatus.INTERNAL_SERVER_ERROR, "error occurred in configuration of speech synthesizer"),
     ERROR_INTERRUPTED_EXCEPTION(HttpStatus.INTERNAL_SERVER_ERROR, "Interrupted exception occurred while synthesizing text to speech"),
     ERROR_EXECUTION_EXCEPTION(HttpStatus.INTERNAL_SERVER_ERROR, "Execution Exception occurred while synthesizing text to speech"),
-    ERROR_SPEECH_SYNTHESIS_CANCELED(HttpStatus.PRECONDITION_FAILED, "Speech synthesis canceled, ");
+    ERROR_SPEECH_SYNTHESIS_CANCELED(HttpStatus.PRECONDITION_FAILED, "Speech synthesis canceled, see log for more details");
 
 
     private final HttpStatus httpStatus;
