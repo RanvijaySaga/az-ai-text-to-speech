@@ -2,6 +2,14 @@ spring:
   application:
     name: text2Speech
 
+server:
+  port: 8082
+
+logging:
+  level:
+    root : INFO
+
+
 text2Speech:
   key: SPEECH_KEY
   region: SPEECH_REGION
