@@ -1,5 +1,8 @@
 package com.tts.text2Speech.constants;
 
+/**
+ * The type Speech synthesis constants.
+ */
 public class SpeechSynthesisConstants {
     /**
      * To change the speech synthesis language, replace en-US-AvaMultilingualNeural with another

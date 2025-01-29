@@ -1,6 +1,9 @@
 
 package com.tts.text2Speech.constants;
 
+/**
+ * The type Controller constants.
+ */
 public class ControllerConstants {
 
     public static final String URL_TEXT_TO_SPEECH_BASE_PATH = "/text2speech/v1";

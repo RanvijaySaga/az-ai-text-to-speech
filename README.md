@@ -6,9 +6,12 @@ or create a custom neural voice that's unique to your product or brand.
 
 
 # Prerequisites
-* An Azure subscription. You can create one for free.
-* Create a Speech resource in the Azure portal.
-* Get the Speech resource key and region. After your Speech resource is deployed, select Go to resource to view and manage keys.
+* Java Development Kit (JDK) 17
+* Apache Maven 3.6.3
+* Lombok plugin installed in IDE
+* An Azure account with an active subscription. (Create an account for free)
+* A Speech resource key and region. (Create a Speech resource in the Azure portal and Get the Speech resource key and region)
+* Postman for testing the API (Optional)
 
 # Getting Started
 

@@ -19,10 +19,24 @@ public class Text2SpeechService {
 
     private final SpeechSynthesizer speechSynthesizer;
 
+    /**
+     * Convert text to speech.
+     * <p>
+     * // Asynchronously synthesize the received text to speech.
+     * // Note: this is a blocking operation, as the result is needed before the function exits.
+     * // For a non-blocking version, use SpeakTextAsync() instead.
+     * // The task is complete when the audio is finished playing.
+     * // The task returns a result which indicates the reason the audio playback completed.
+     * // The cancellation details are available in the result.
+     * // Get the speech key from properties file and set it in the SpeechConfig instance.
+     *
+     * @param request the request
+     * @return the speech synthesis response
+     */
+
     public SpeechSynthesisResponse convertTextToSpeech(Text2SpeechRequest request) {
         SpeechSynthesisResponse response = new SpeechSynthesisResponse();
         try {
-
             SpeechSynthesisResult speechSynthesisResult = speechSynthesizer.SpeakTextAsync(request.getInputText()).get();
 
             switch (speechSynthesisResult.getReason()) {
@@ -48,8 +62,8 @@ public class Text2SpeechService {
         message.append("CANCELED: Reason= ").append(cancellation.getReason());
 
         if (cancellation.getReason() == CancellationReason.Error) {
-            message.append(" ,ErrorCode= ").append(cancellation.getErrorCode());
-            message.append(" ,ErrorDetails= ").append(cancellation.getErrorDetails());
+            message.append(" ,ErrorCode=").append(cancellation.getErrorCode());
+            message.append(" ,ErrorDetails=").append(cancellation.getErrorDetails());
             message.append(" ,hint= Did you set the speech resource key and region values?");
         }
         return message.toString();

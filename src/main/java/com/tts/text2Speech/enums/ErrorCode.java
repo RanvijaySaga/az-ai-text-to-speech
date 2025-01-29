@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.http.HttpStatus;
 
+/**
+ * Enum for error codes
+ */
 @Getter
 public enum ErrorCode {
 
@@ -12,7 +15,7 @@ public enum ErrorCode {
     ERROR_SPEECH_SYNTHESIS_CONFIG(HttpStatus.INTERNAL_SERVER_ERROR, "error occurred in configuration of speech synthesizer"),
     ERROR_INTERRUPTED_EXCEPTION(HttpStatus.INTERNAL_SERVER_ERROR, "Interrupted exception occurred while synthesizing text to speech"),
     ERROR_EXECUTION_EXCEPTION(HttpStatus.INTERNAL_SERVER_ERROR, "Execution Exception occurred while synthesizing text to speech"),
-    ERROR_SPEECH_SYNTHESIS_CANCELED(HttpStatus.PRECONDITION_FAILED, "Speech synthesis canceled, see log for more details");
+    ERROR_SPEECH_SYNTHESIS_CANCELED(HttpStatus.PRECONDITION_FAILED, "Speech synthesis failed");
 
 
     private final HttpStatus httpStatus;

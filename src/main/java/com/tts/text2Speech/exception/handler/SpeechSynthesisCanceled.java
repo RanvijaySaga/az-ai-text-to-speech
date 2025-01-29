@@ -1,7 +1,7 @@
 package com.tts.text2Speech.exception.handler;
 
 /**
- * The type Speech synthesis canceled.
+ * The type Speech synthesis canceled exception
  */
 public class SpeechSynthesisCanceled extends RuntimeException {
 

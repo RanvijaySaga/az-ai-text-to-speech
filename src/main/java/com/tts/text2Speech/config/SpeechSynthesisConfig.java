@@ -10,6 +10,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Speech synthesis configuration.
+ */
 @Configuration
 public class SpeechSynthesisConfig {
 
@@ -18,13 +21,19 @@ public class SpeechSynthesisConfig {
     @Value("${text2Speech.region}")
     private String speechRegion;
 
+    /**
+     * Create speech synthesizer bean.
+     * <p>
+     * To change the speech synthesis language, replace en-US-AvaMultilingualNeural with another
+     * supported voice : <a href="https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=stt#prebuilt-neural-voices">...</a>
+     *
+     * @return the speech synthesizer
+     * @throws Text2SpeechException the text 2 speech exception
+     */
     @Bean
     public SpeechSynthesizer speechSynthesizer() {
         try (SpeechConfig speechConfig = SpeechConfig.fromSubscription(speechKey, speechRegion)) {
-            /*
-             * To change the speech synthesis language, replace en-US-AvaMultilingualNeural with another
-             * supported voice : <a href="https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=stt#prebuilt-neural-voices">...</a>
-             */
+
             speechConfig.setSpeechSynthesisVoiceName(SpeechSynthesisConstants.SPEECH_SYNTHESIS_VOICE_NAME);
 
             return new SpeechSynthesizer(speechConfig);
