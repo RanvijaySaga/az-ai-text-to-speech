@@ -1,5 +1,5 @@
 # Azure Cognitive Service TTS(Text To Speech) 
-Text to speech  application enables you to convert text into human like synthesized speech. 
+ Text to speech  application enables you to convert text into human like synthesized speech. 
 The text to speech capability is also known as speech synthesis. 
 Use human like prebuilt neural voices out of the box, 
 or create a custom neural voice that's unique to your product or brand.
